@@ -90,7 +90,7 @@ func testChannel(channel *model.Channel, testModel string, endpointType string, 
 		}
 		defer resp.Body.Close()
 		body, _ := io.ReadAll(resp.Body)
-		if resp.StatusCode == http.StatusOK && strings.Contains(strings.ToLower(string(body)), "ok") {
+		if resp.StatusCode == http.StatusOK && strings.Contains(strings.ToLower(string(body)), "healthy") {
 			return testResult{}
 		}
 		return testResult{
